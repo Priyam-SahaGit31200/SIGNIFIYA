@@ -1,0 +1,145 @@
+/* Cyberpunk Display Page Theme */
+:root {
+    --neon-cyan: #64ffda;
+    --cyber-purple: #a64dff;
+    --dark-space: #020c1b;
+    --deep-void: #000000;
+    --matrix-green: #00ff00;
+    --hacker-red: #ff003c;
+}
+
+body {
+    background: 
+        radial-gradient(circle at center, #0a192f 0%, #020c1b 100%),
+        linear-gradient(45deg, 
+            rgba(166, 77, 255, 0.1) 0%, 
+            rgba(100, 255, 218, 0.1) 50%, 
+            rgba(0, 255, 0, 0.1) 100%),
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23020c1b"/><path d="M20 20h60v60H20z" fill="none" stroke="%230a192f" stroke-width="2"/><path d="M30 30h40v40H30z" fill="none" stroke="%230a192f" stroke-width="1"/></svg>');
+    color: var(--neon-cyan);
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+}
+
+/* Cyber Grid System */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(100, 255, 218, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 255, 218, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.navbar {
+    background: rgba(2, 12, 27, 0.95) !important;
+    border-bottom: 1px solid var(--neon-cyan);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    color: var(--neon-cyan) !important;
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.navbar-brand::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.nav-link {
+    color: var(--neon-cyan) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.container {
+    background: rgba(2, 12, 27, 0.95);
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 50px rgba(100, 255, 218, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-bottom: 3px solid var(--neon-cyan);
+    padding-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+strong {
+    color: var(--cyber-purple);
+    text-shadow: 0 0 8px rgba(166, 77, 255, 0.3);
+    display: inline-block;
+    min-width: 180px;
+}
+
+#nameDisplay,
+#registrationNumberDisplay,
+#emailDisplay,
+#departmentDisplay,
+#eventsDisplay {
+    color: white;
+    text-shadow: 0 0 5px var(--neon-cyan);
+    font-weight: bold;
+}
+
+/* Binary Rain Effect (static background) */
+.binary-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: -1;
+    background-image: linear-gradient(transparent 95%, rgba(100, 255, 218, 0.1));
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    strong {
+        min-width: 140px;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+}
