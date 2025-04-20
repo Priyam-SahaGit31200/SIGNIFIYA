@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function saveFormData() {
+            // Saving form data in local storage
+            const name = document.getElementById('name').value;
+            const registrationNumber = document.getElementById('registrationNumber').value;
+            const email = document.getElementById('email').value;
+            const department = document.getElementById('department').value;
+            const events = document.getElementById('events').value;
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('registrationNumber', registrationNumber);
+            localStorage.setItem('email', email);
+            localStorage.setItem('department', department);
+            localStorage.setItem('events', events);
+
+            // Redirecting to display page
+            window.location.href = "display.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="binary-rain" data-binary="0101010101010101010101010101010101010101010101010101010101010101"></div>
+    <div class="scan-line"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Tech Fest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <center><h2>Registration</h2></center>
+        <form onsubmit="event.preventDefault(); saveFormData();">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="registrationNumber" class="form-label">Registration Number</label>
+                <input type="text" class="form-control" id="registrationNumber" name="registrationNumber" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="department" class="form-label">Department</label>
+                <select class="form-select" id="department" name="department" required>
+                    <option value="" disabled selected>Select your department</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Mechanical">Mechanical</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="events" class="form-label">Events</label>
+                <select class="form-select" id="events" name="events" required>
+                    <option value="" disabled selected>Select an event</option>
+                    <option value="Coding Competition">Coding Competition</option>
+                    <option value="Robotics">Robotics</option>
+                    <option value="Hackathon">Hackathon</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
